@@ -8,8 +8,7 @@ export default function App() {
   // LOCAL BACKEND
   // Works only on same Wi-Fi/LAN
 
-  const API = "http://192.168.0.2:10000";
-
+  const API = "https://your-render-app.onrender.com";
 
   useEffect(() => {
 
