@@ -5,11 +5,9 @@ export default function App() {
 
   const [serverData, setServerData] = useState(null);
 
-  // LOCAL BACKEND
-  // Works only on same Wi-Fi/LAN
 
-  const API = "https://your-render-app.onrender.com";
-
+  const API = "https://settings-tells-refers-relaxation.trycloudflare.com";
+ 
   useEffect(() => {
 
     const callServer = async () => {
