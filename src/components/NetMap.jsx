@@ -126,40 +126,45 @@ const NetMap = () => {
       "
       />
 
-      {/* giant background symbol */}
-      <motion.div
-        className="
-        absolute
-        inset-0
-        flex
-        items-center
-        justify-center
-        z-0
-        select-none
-      "
-        initial={{
-          opacity:0,
-          scale:.7
-        }}
-        animate={{
-          opacity:.10,
-          scale:1
-        }}
-      >
-        <div
-          className="
-          text-[#ff0033]
-          font-black
-          leading-none
-        "
-          style={{
-            fontSize:"20rem"
-           
-          }}
-        >
-          𑄝
-        </div>
-      </motion.div>
+{/* giant background symbol */}
+<motion.div
+  className="
+    absolute
+    inset-0
+    flex
+    items-center
+    justify-center
+    z-0
+    select-none
+    bottom-[12%]
+  "
+  initial={{
+    opacity: 0,
+    scale: 0.9,
+  }}
+  animate={{
+    opacity: 1,   // 🔥 FIX: full opacity
+    scale: 1,
+  }}
+  transition={{
+    duration: 1.2,
+  }}
+>
+  <div
+    className="
+      text-[#ff0033]
+      font-black
+      leading-none
+    "
+    style={{
+      fontSize: "26rem",
+      opacity: 1, // 🔥 extra safety
+      textShadow: "0 0 25px #ff0033", // optional glow (still crisp)
+    }}
+  >
+    𑄝
+  </div>
+</motion.div>
 
       {/* network connections */}
       <svg
