@@ -18,20 +18,26 @@ export default function WordCarousel() {
   return (
     <div className="absolute bottom-0 left-0 w-full overflow-hidden z-20">
 
-      {/* SCROLL WRAPPER */}
       <div className="flex w-max animate-scroll">
 
-        {/* DUPLICATED CONTENT FOR LOOP */}
         {[...words, ...words].map((word, i) => (
           <div
             key={i}
             className="
-              px-6 py-3
+              px-3 md:px-6
+              py-2 md:py-3
+
               text-[#ff0033]
               font-mono
-              text-m
-              tracking-widest
+
+              text-[11px]
+              sm:text-xs
+              md:text-sm
+              lg:text-base
+
+              tracking-wider md:tracking-widest
               whitespace-nowrap
+
               border-r border-[#ff0033]/30
               bg-black/40
               backdrop-blur-md
@@ -40,16 +46,13 @@ export default function WordCarousel() {
             {word}
           </div>
         ))}
-
       </div>
 
-      {/* GLOW LINE */}
       <div className="h-[2px] w-full bg-[#ff0033]/40 shadow-[0_0_25px_rgba(255,0,51,0.7)]" />
 
-      {/* ANIMATION STYLE */}
       <style jsx>{`
         .animate-scroll {
-          animation: scroll 50s linear infinite;
+          animation: scroll 45s linear infinite;
         }
 
         @keyframes scroll {
@@ -60,8 +63,13 @@ export default function WordCarousel() {
             transform: translateX(0%);
           }
         }
-      `}</style>
 
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation-duration: 25s;
+          }
+        }
+      `}</style>
     </div>
   );
 }

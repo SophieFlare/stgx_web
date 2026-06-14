@@ -156,11 +156,11 @@ const NetMap = () => {
       font-black
       leading-none
     "
-    style={{
-      fontSize: "26rem",
-      opacity: 1, // 🔥 extra safety
-      textShadow: "0 0 25px #ff0033", // optional glow (still crisp)
-    }}
+style={{
+  fontSize: "clamp(18rem, 35vw, 26rem)",
+  opacity: 1,
+  textShadow: "0 0 25px #ff0033",
+}}
   >
     𑄝
   </div>
@@ -189,7 +189,7 @@ const NetMap = () => {
               x2={`${n2.x}%`}
               y2={`${n2.y}%`}
               stroke="#ff0033"
-              strokeWidth="2"
+             strokeWidth={window.innerWidth < 768 ? 1 : 2}
               opacity=".9"
               filter="
               drop-shadow(
@@ -272,45 +272,40 @@ const NetMap = () => {
 
             <div
               className={`
-              w-16 h-16
-              rounded-full
-              border
-              flex
-              flex-col
-              items-center
-              justify-center
-              bg-[#120006]
-              border-[#ff0033]
-              text-[#ff3355]
-              backdrop-blur-md
-              transition-all
-              duration-300
-              shadow-[0_0_20px_#ff0033]
+  w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16
+  rounded-full
+  border
+  flex
+  flex-col
+  items-center
+  justify-center
+  bg-[#120006]
+  border-[#ff0033]
+  text-[#ff3355]
+  backdrop-blur-md
+  transition-all
+  duration-300
+  shadow-[0_0_20px_#ff0033]
 
-              ${
-                activeNode===node.id
-                ?`
-                scale-110
-                text-white
-                border-white
-                shadow-[0_0_45px_#ff0033]
-                `
-                :""
-              }
-            `}
+  ${
+    activeNode===node.id
+      ? `
+        scale-110 sm:scale-125
+        text-white
+        border-white
+        shadow-[0_0_45px_#ff0033]
+      `
+      : ""
+  }
+`}
+            
             >
 
-              <Icon size={18}/>
+             <Icon size={14} className="sm:text-[16px] md:text-[18px]" />
 
-              <span
-                className="
-                text-[8px]
-                mt-1
-                tracking-widest
-              "
-              >
-                {node.id}
-              </span>
+      <span className="text-[6px] sm:text-[8px] md:text-[9px] mt-1 tracking-widest">
+  {node.id}
+</span>
 
             </div>
 

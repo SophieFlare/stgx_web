@@ -34,33 +34,33 @@ const Form = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-black text-white px-3 sm:px-6 py-8">
-      <form
-        onSubmit={handleSubmit}
-        className="
-          w-full
+  <div className="min-h-screen w-full flex items-center justify-center bg-black text-white px-3 sm:px-6 py-10 sm:py-10">
+    <form
+      onSubmit={handleSubmit}
+      className="
+        w-full
 
-          /* 👇 reduced width so it doesn't look fat */
-          max-w-sm sm:max-w-md md:max-w-lg
+        max-w-sm sm:max-w-md md:max-w-lg
 
-          min-h-[600px] sm:min-h-[650px]
+        /* 🔥 MOBILE FULL SCREEN FIX */
+        h-screen sm:h-auto
 
-          bg-black/70
-          border border-[#ff0033]
+        bg-black/70
+        border border-[#ff0033]
 
-          rounded-xl
+        rounded-none sm:rounded-xl
 
-          p-4 sm:p-6 md:p-8
+        p-4 sm:p-6 md:p-8
 
-          shadow-[0_0_30px_rgba(255,0,51,0.25)]
-          backdrop-blur-md
+        shadow-[0_0_30px_rgba(255,0,51,0.25)]
+        backdrop-blur-md
 
-          flex flex-col
-          gap-4
-        "
-      >
+        flex flex-col
+        gap-3 sm:gap-4
+      "
+    >
         {/* TITLE */}
-        <h2 className="text-[#ff0033] font-bold tracking-widest text-center text-lg sm:text-xl md:text-2xl">
+        <h2 className="text-[#ff0033] font-bold tracking-widest text-center text-base sm:text-lg md:text-2xl">
           NETCAT SIGNAL FORM
         </h2>
 
@@ -71,13 +71,19 @@ const Form = () => {
           onChange={handleChange}
           placeholder="Alias..."
           className="
-            w-full p-2 sm:p-3
+            w-full
+            p-2 sm:p-3
+
             bg-black
             border border-[#ff0033]/50
             text-white
+
             focus:border-[#ff0033]
             outline-none
+
             text-sm sm:text-base
+
+            rounded-md
           "
         />
 
@@ -88,13 +94,19 @@ const Form = () => {
           onChange={handleChange}
           placeholder="Experience level..."
           className="
-            w-full p-2 sm:p-3
+            w-full
+            p-2 sm:p-3
+
             bg-black
             border border-[#ff0033]/50
             text-white
+
             focus:border-[#ff0033]
             outline-none
+
             text-sm sm:text-base
+
+            rounded-md
           "
         />
 
@@ -114,8 +126,14 @@ const Form = () => {
                   key={key}
                   onClick={() => toggleInterest(key)}
                   className={`
-                    px-2 sm:px-3 py-1 text-[10px] sm:text-xs uppercase tracking-widest
+                    px-2 sm:px-3 py-1
+
+                    text-[10px] sm:text-xs md:text-sm
+                    uppercase tracking-widest
+
                     border transition-all duration-200
+
+                    rounded-sm
 
                     ${
                       active
@@ -139,19 +157,22 @@ const Form = () => {
           placeholder="Encrypted message..."
           className="
             w-full flex-1
-            min-h-[120px]
+            min-h-[100px] sm:min-h-[120px]
 
             p-2 sm:p-3
 
             bg-black
             border border-[#ff0033]/50
             text-white
+
             focus:border-[#ff0033]
             outline-none
 
             resize-none
 
             text-sm sm:text-base
+
+            rounded-md
           "
         />
 
@@ -159,7 +180,8 @@ const Form = () => {
         <button
           type="submit"
           className="
-            w-full py-2 sm:py-3
+            w-full
+            py-2 sm:py-3
 
             border border-[#ff0033]
             text-[#ff0033]
@@ -172,6 +194,8 @@ const Form = () => {
 
             transition-all
             shadow-[0_0_25px_rgba(255,0,51,0.3)]
+
+           
           "
         >
           TRANSMIT
